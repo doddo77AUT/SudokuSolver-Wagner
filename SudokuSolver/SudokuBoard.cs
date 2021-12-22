@@ -14,6 +14,21 @@ namespace SudokuSolver {
       fixedNumbers = new bool[size, size];
     }
 
+        public override string ToString()
+        {
+            StringBuilder solvedboard = new();
+            for (int i = 0; i<size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    solvedboard.Append(board[i, j]);
+                    solvedboard.Append("");
+                }
+                solvedboard.AppendLine();
+            }
+            return solvedboard.ToString();
+        }
+
     public SudokuBoard(int?[,] numbers) : this() {
       for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
